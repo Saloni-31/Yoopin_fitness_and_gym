@@ -10,6 +10,7 @@ import Tutorials from "./pages/Tutorials";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Products from "./pages/Products";
 
 function App() {
   return (
@@ -23,8 +24,9 @@ function App() {
         <Route path="/extensions" element={<Extensions />} />
         <Route path="/tutorials" element={<Tutorials />} />
         <Route path="/contact" element={<Contact />} />
-		<Route path="/login" element={<Login />} />
-		<Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/products" element={<Products/>}/>
       </Routes>
     </BrowserRouter>
   );

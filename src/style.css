@@ -187,10 +187,10 @@ img{
 }
 
 .services{
-    background:#f04b00;
-    color:white;
+    background:#93CAED;
+    color:black;
     width:80%;
-    margin: -140px auto 0;  
+    margin: 140px auto 0;  
     padding:60px;
     position:relative;
     z-index:10;
@@ -205,7 +205,7 @@ img{
 .line{
     width:80px;
     height:3px;
-    background:#fff;
+    background:white;
     margin:20px auto;
 }
 
@@ -961,3 +961,379 @@ button{
     color:#ff9800;
 }
 
+/* =========================================
+   NEW YOOPIN HEADER
+========================================= */
+
+.main-header {
+    height: 98px;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    border-bottom: 1px solid #eeeeee;
+
+    position: relative;
+    z-index: 1000;
+}
+
+
+/* LOGO */
+
+.main-header .logo {
+    display: flex;
+    align-items: center;
+
+    color: #172236;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+    position: relative;
+}
+
+/* NAVIGATION */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.main-nav a {
+    text-decoration: none;
+
+    color: #20252d;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: #1769e0;
+}
+
+
+/* RIGHT ICONS */
+
+.header-icons {
+    display: flex;
+    align-items: center;
+
+    gap: 23px;
+}
+
+.header-icons button {
+    border: none;
+    background: transparent;
+
+    padding: 0;
+
+    color: #20252d;
+
+    font-size: 23px;
+
+    position: relative;
+}
+
+.header-icons button:hover {
+    color: #1769e0;
+}
+
+
+/* CART NUMBER */
+
+.cart-icon span {
+    position: absolute;
+
+    top: -10px;
+    right: -11px;
+
+    width: 19px;
+    height: 19px;
+
+    background: #1769e0;
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Fix Yoopin logo for new white header */
+
+.main-header .logo {
+    color: #172236;
+}
+.main-header .logo img {
+    filter: none;
+}
+
+/* =========================================
+   YOOPIN LOGO
+========================================= */
+
+.main-header .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 130px;
+
+    color: #172236;
+
+    line-height: 1;
+	transform: translateY(-5px);
+}
+/* Mountain above YOOPIN */
+
+.main-header .logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    /*margin-bottom: 0px;*/
+}
+
+
+/* YOOPIN text */
+
+.main-header .logo-text {
+    color: #172236 !important;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+    line-height: 1;
+}
+
+/* =========================================
+   NEW YOOPIN FITNESS HERO
+========================================= */
+
+.fitness-hero {
+    position: relative;
+
+    width: 100%;
+    height: 565px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f5f5f5;
+}
+
+
+/* HERO IMAGE */
+
+.fitness-hero-image {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 1;
+}
+
+
+/* LIGHT OVERLAY */
+
+.fitness-hero-overlay {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.20);
+
+    z-index: 2;
+}
+
+
+/* HERO CONTENT */
+
+.fitness-hero-content {
+    position: relative;
+
+    z-index: 3;
+
+    text-align: center;
+
+    margin-top: -10px;
+}
+
+
+.fitness-hero-content h1 {
+    margin: 0 0 20px 0;
+
+    color: #172236;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 62px;
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+}
+
+
+.fitness-hero-content p {
+    margin: 0 0 30px 0;
+
+    color: #30343a;
+
+    font-size: 19px;
+
+    line-height: 1.5;
+
+    font-weight: 400;
+}
+
+
+/* BUTTON CONTAINER */
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+/* COMMON BUTTON */
+
+.hero-btn {
+    height: 48px;
+
+    padding: 0 28px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+
+/* SHOP NOW */
+
+.primary-btn {
+    background: #1769e0;
+
+    color: white;
+
+    border: 2px solid #1769e0;
+}
+
+
+.primary-btn:hover {
+    background: #0e56c5;
+
+    color: white;
+}
+
+
+/* EXPLORE COLLECTION */
+
+.secondary-btn {
+    background: rgba(255,255,255,0.85);
+
+    color: #20252d;
+
+    border: 2px solid #20252d;
+}
+
+
+.secondary-btn:hover {
+    background: #20252d;
+
+    color: white;
+}
+
+
+/* HERO ARROWS */
+
+.fitness-hero-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 4;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+
+    background: rgba(255,255,255,0.9);
+
+    color: #20252d;
+
+    font-size: 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+
+.fitness-hero-arrow:hover {
+    background: white;
+}
+
+
+.fitness-hero .left-arrow {
+    left: 4%;
+}
+
+
+.fitness-hero .right-arrow {
+    right: 4%;
+}

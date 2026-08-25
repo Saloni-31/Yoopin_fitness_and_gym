@@ -1,60 +1,59 @@
 import { Link } from "react-router-dom";
+import heroImage from "../assets/images/hero-bg.png";
+
 function Hero() {
   return (
-    <section className="hero">
-      <div id="heroSlider" className="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div className="carousel-inner">
+    <section className="fitness-hero">
 
-          {/* Slide 1 */}
-          <div className="carousel-item active">
-            <img src="./src/assets/images/hero-bg.png" className="d-block w-100" alt="Hero background" />
-            <div className="overlay"></div>
-            <div className="carousel-caption">
-              <h1>DELIVERING THE QUALITY <br />WORK AFFORDABLE</h1>
-              <h6>power by psdfreebies.com</h6>
-              <p>
-                Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget <br />
-                lacinia odio sem nec elit. Aenean eu leo quam </p>
-              <Link to="/login" className="btn btn-outline-light">Login</Link>
-			  <Link to="/signup" className="btn btn-warning">Sign Up</Link>
-            </div>
-			</div>
+      {/* Background image */}
+      <img
+        src={heroImage}
+        alt="Fitness equipment"
+        className="fitness-hero-image"
+      />
 
-          {/* Slide 2 */}
-          <div className="carousel-item">
-            <img src="./src/assets/images/hero-bg.png" className="d-block w-100" alt="Hero background" />
-            <div className="overlay"></div>
-            <div className="carousel-caption">
-              <h1>TEMPLATE_1</h1>
-              <h4>Made by Saloni Sharma & Tanisha Baghel</h4>
-              <p>Template conversion using HTML, CSS and BOOTSTRAP</p>
-              <button className="btn btn-light">View More</button>
-              <button className="btn btn-light">Contact Us</button>
-            </div>
-          </div>
+      {/* Light overlay */}
+      <div className="fitness-hero-overlay"></div>
+
+      {/* Hero content */}
+      <div className="fitness-hero-content">
+
+        <h1>
+          TRAIN HARD.
+          <br />
+          LIVE STRONG.
+        </h1>
+
+        <p>
+          Premium fitness gear designed for durability and
+          <br />
+          peak performance.
+        </p>
+
+        <div className="hero-buttons">
+
+          <Link to="/shop" className="hero-btn primary-btn">
+            SHOP NOW
+          </Link>
+
+          <Link to="/categories" className="hero-btn secondary-btn">
+            EXPLORE COLLECTION
+          </Link>
 
         </div>
 
-        {/* Previous button */}
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#heroSlider"
-          data-bs-slide="prev"
-        >
-          <span className="carousel-control-prev-icon"></span>
-        </button>
-
-        {/* Next button */}
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#heroSlider"
-          data-bs-slide="next"
-        >
-          <span className="carousel-control-next-icon"></span>
-        </button>
       </div>
+
+      {/* Left arrow */}
+      <button className="fitness-hero-arrow left-arrow">
+        <i className="bi bi-chevron-left"></i>
+      </button>
+
+      {/* Right arrow */}
+      <button className="fitness-hero-arrow right-arrow">
+        <i className="bi bi-chevron-right"></i>
+      </button>
+
     </section>
   );
 }

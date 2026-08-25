@@ -1,46 +1,47 @@
 import { NavLink } from "react-router-dom";
 import mountain from "../assets/icons/mountain.svg";
-import twitter from "../assets/icons/twitter.svg";
-import facebook from "../assets/icons/facebook.svg";
-import googlePlus from "../assets/icons/google-plus.svg";
-import pinterest from "../assets/icons/pinterest.svg";
 
 function Header() {
   return (
-    <header>
-      <div className="logo">
-        <img src={mountain} className="mountain" alt="Mountain logo" />
-        <span>YOO</span>PIN
-      </div>
+    <header className="main-header">
 
-      <nav>
-        <ul>
-          <li><NavLink to="/">Home</NavLink></li>
-          <li><NavLink to="/pages">Pages</NavLink></li>
-          <li><NavLink to="/features">Features</NavLink></li>
-          <li><NavLink to="/extensions">Extensions</NavLink></li>
-          <li><NavLink to="/tutorials">Tutorials</NavLink></li>
-          <li><NavLink to="/contact">Contact Us</NavLink></li>
-		</ul>
+      {/* Logo */}
+        <div className="logo">
+		  <img src={mountain} alt="Yoopin logo" />
+		  <div className="logo-text">YOOPIN</div>
+		</div>
+
+      {/* Navigation */}
+      <nav className="main-nav">
+        <NavLink to="/">SHOP</NavLink>
+        <NavLink to="/categories">CATEGORIES</NavLink>
+        <NavLink to="/tutorials">TUTORIALS</NavLink>
+        <NavLink to="/about">ABOUT US</NavLink>
+        <NavLink to="/contact">CONTACT US</NavLink>
       </nav>
 
-      <div className="social">
-      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-      <img src={twitter} className="twitter" alt="Twitter" />
-      </a>
+      {/* Right icons */}
+      <div className="header-icons">
 
-      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-      <img src={facebook} className="facebook" alt="Facebook" />
-      </a>
+        <button aria-label="Search">
+          <i className="bi bi-search"></i>
+        </button>
 
-      <a href="https://plus.google.com" target="_blank" rel="noopener noreferrer">
-      <img src={googlePlus} className="googleplus" alt="Google Plus" />
-      </a>
+        <button aria-label="Wishlist">
+          <i className="bi bi-heart"></i>
+        </button>
 
-      <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">
-      <img src={pinterest} className="pinterest" alt="Pinterest" />
-      </a>
-    </div>
+        <button className="cart-icon" aria-label="Cart">
+          <i className="bi bi-cart3"></i>
+          <span>3</span>
+        </button>
+
+        <button aria-label="Account">
+          <i className="bi bi-person"></i>
+        </button>
+
+      </div>
+
     </header>
   );
 }

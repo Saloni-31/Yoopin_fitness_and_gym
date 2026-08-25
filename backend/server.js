@@ -7,6 +7,8 @@ import db from './db_conn.js';
 import conn from "./db_conn.js";
 import authRoutes from "./routes/authRoutes.js"
 import testRoutes from "./routes/testRoutes.js";
+import productRoutes from "./routes/productRoutes.js";
+
 
 const PORT = 8080;
 app.use(express.json());
@@ -14,6 +16,7 @@ app.use(express.json());
 app.use(cors({'origin':'http:localhost:5173'}));
 app.use("/api/auth", authRoutes);
 app.use("/api/test", testRoutes);
+app.use("/api/products",productRoutes);
 
 app.post("/addcategories",(req,res)=>{
     const {name,description}=req.body;   

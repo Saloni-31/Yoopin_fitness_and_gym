@@ -1,36 +1,75 @@
+import { Link } from "react-router-dom";
+import "../styles/Services.css";
+
 function Services() {
-  return (
-    <section className="services">
-      <div className="container">
-        <h2>Welcome to the YooPin Services</h2>
-        <div className="line"></div>
-        <p className="service-text">
-          Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue
-          laoreet rutrum faucibus dolor auctor. Integer posuere erat a ante venenatis dapibus
-          posuere velit aliquet.
-        </p>
-        <div className="row mt-5">
-          <div className="col-md-4 service-box">
-            <i className="bi bi-pencil-square service-icon"></i>
-            <h4>FEATURE ONE</h4>
-            <p>Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet.</p>
-          </div>
+    const services = [
+        {
+            icon: "🏋️",
+            title: "Personal Training",
+            text: "Get personalized workout guidance designed around your fitness goals."
+        },
+        {
+            icon: "💪",
+            title: "Strength Training",
+            text: "Build strength, improve performance and become stronger every day."
+        },
+        {
+            icon: "🧘",
+            title: "Yoga & Flexibility",
+            text: "Improve flexibility, mobility and balance with guided yoga sessions."
+        },
+        {
+            icon: "🥗",
+            title: "Nutrition Guidance",
+            text: "Get simple nutrition guidance to support your fitness journey."
+        }
+    ];
 
-          <div className="col-md-4 service-box">
-            <i className="bi bi-search service-icon"></i>
-            <h4>FEATURE TWO</h4>
-            <p>Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet.</p>
-          </div>
+    return (
+        <section className="services-section">
 
-          <div className="col-md-4 service-box">
-            <i className="bi bi-chat-dots service-icon"></i>
-            <h4>FEATURE THREE</h4>
-            <p>Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+            <div className="services-container">
+
+                {/* Heading */}
+                <div className="services-heading">
+                    <p className="services-subtitle">WHAT WE OFFER</p>
+
+                    <h2>Our Services</h2>
+
+                    <p>
+                        Everything you need to build a stronger,
+                        healthier and more active lifestyle.
+                    </p>
+                </div>
+
+                {/* Service Cards */}
+                <div className="services-grid">
+
+                    {services.map((service, index) => (
+                        <div className="service-card" key={index}>
+
+                            <div className="service-icon">
+                                {service.icon}
+                            </div>
+
+                            <h3>{service.title}</h3>
+
+                            <p>{service.text}</p>
+
+                            <Link to="/services" className="service-link">
+                                Learn More →
+                            </Link>
+
+                        </div>
+                    ))}
+
+                </div>
+
+            </div>
+
+        </section>
+    );
 }
 
 export default Services;
+

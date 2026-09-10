@@ -1,65 +1,140 @@
-function Products() {
-  return (
-    <section className="product-section">
-      <div className="container">
-        <h2 className="text-center product-title">Our Products</h2>
-        <div className="title-line"></div>
-        <p className="product-para text-center">
-          Aenean lacinia bibendum nulla sed consectetur.
-          Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-          Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-        </p>
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useWishlist } from "../Context/WishlistContext";
+import "../styles/Product.css";
 
-        <div className="row mt-5">
-          {/* Left Content */}
-          <div className="col-lg-3 d-flex align-items-center">
-            <div>
-              <h4>AKITA INU DOG</h4>
-              <hr />
-              <p>
-                Cum sociis natoque penatibus et
-                magnis dis parturient montes,
-                nascetur ridiculus mus.
-                Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit.
-                Donec sed odio dui.
-                Vivamus sagittis lacus vel augue.
-              </p>
-              <a href="#" className="btn btn-product">View more</a>
+const Products = () => {
+    const [products, setProducts] = useState([]);
+
+    const {
+        addToWishlist,
+        removeFromWishlist,
+        isInWishlist
+    } = useWishlist();
+
+    useEffect(() => {
+        axios.get("http://localhost:8080/api/products")
+            .then((res) => {
+                setProducts(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }, []);
+
+    return (
+        <section className="home-products">
+
+            {/* Section Heading */}
+            <div className="products-header">
+                <p className="products-subtitle">
+                    OUR COLLECTION
+                </p>
+
+                <h1>Featured Products</h1>
+
+                <p>
+                    Premium fitness essentials designed to support
+                    your strength, training and everyday performance.
+                </p>
             </div>
-          </div>
 
-          {/* Left Image */}
-          <div className="col-lg-2 text-center">
-            <img src="./src/assets/icons/1.svg" className="product-img" alt="Product" />
-          </div>
+            {/* Products */}
+            <div className="products-grid">
 
-          {/* Right Content */}
-          <div className="col-lg-3 d-flex align-items-center">
-            <div>
-              <h4>AKITA INU DOG</h4>
-              <hr />
-              <p>
-                Cum sociis natoque penatibus et
-                magnis dis parturient montes,
-                nascetur ridiculus mus.
-                Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit.
-                Donec sed odio dui.
-                Vivamus sagittis lacus vel augue.
-              </p>
-              <a href="#" className="btn btn-product">View more</a>
+                {products.slice(0, 6).map((product) => (
+                    <div
+                        className="product-card"
+                        key={product.id}
+                    >
+
+                        {/* Product Image */}
+                        <div className="product-image">
+
+                            {/* Wishlist Button */}
+                            <button
+                                className="wishlist-button"
+                                onClick={() => {
+                                    if (isInWishlist(product.id)) {
+                                        removeFromWishlist(product.id);
+                                    } else {
+                                        addToWishlist(product);
+                                    }
+                                }}
+                                aria-label="Wishlist"
+                            >
+                                <i
+                                    className={
+                                        isInWishlist(product.id)
+                                            ? "bi bi-heart-fill"
+                                            : "bi bi-heart"
+                                    }
+                                ></i>
+                            </button>
+
+                            {product.image ? (
+                                <img
+                                    src={`http://localhost:8080/uploads/${product.image}`}
+                                    alt={product.name}
+                                />
+                            ) : (
+                                <div className="no-image">
+                                    No Image
+                                </div>
+                            )}
+
+                        </div>
+
+                        {/* Product Information */}
+                        <div className="product-info">
+
+                            <p className="product-category">
+                                {product.category_name || "Fitness"}
+                            </p>
+
+                            <h3>
+                                {product.name}
+                            </h3>
+
+                            <p className="product-description">
+                                {product.description}
+                            </p>
+
+                            <div className="product-bottom">
+
+                                <span className="product-price">
+                                    ₹{product.price}
+                                </span>
+
+                                <Link
+                                    to={`/products/${product.id}`}
+                                >
+                                    <button className="view-btn">
+                                        View Details →
+                                    </button>
+                                </Link>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                ))}
+
             </div>
-          </div>
 
-          {/* Right Image */}
-          <div className="col-lg-2 text-center">
-            <img src="./src/assets/icons/2.svg" className="product-img" alt="Product" />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+            {/* View All Button */}
+            <div className="view-all-products">
+                <Link to="/products">
+                    <button className="view-all-btn">
+                        View All Products
+                    </button>
+                </Link>
+            </div>
+
+        </section>
+    );
+};
 
 export default Products;

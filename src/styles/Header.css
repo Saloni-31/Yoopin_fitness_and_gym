@@ -1,0 +1,67 @@
+/* ================================
+   YOOPIN HEADER ICONS
+================================ */
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+}
+
+.header-icons button,
+.header-icons .cart-icon {
+    border: none;
+    background: transparent;
+    padding: 0;
+
+    color: #20252d;
+    font-size: 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.header-icons button:hover,
+.header-icons .cart-icon:hover {
+    color: #1769e0;
+}
+
+/* Cart icon */
+.header-icons .cart-icon i {
+    color: #20252d;
+    font-size: 23px;
+}
+
+.header-icons .cart-icon:hover i {
+    color: #1769e0;
+}
+
+.header-icons .account-icon {
+    color: #20252d;
+    font-size: 23px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-icons .account-icon:hover {
+    color: #1769e0;
+}
+
+.header-icons .wishlist-icon {
+    color: #20252d;
+    font-size: 23px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-icons .wishlist-icon:hover {
+    color: #1769e0;
+}

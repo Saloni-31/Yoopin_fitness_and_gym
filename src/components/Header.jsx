@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import mountain from "../assets/icons/mountain.svg";
+import "../styles/Header.css";
 
 function Header() {
   return (
@@ -27,18 +28,17 @@ function Header() {
           <i className="bi bi-search"></i>
         </button>
 
-        <button aria-label="Wishlist">
+        <NavLink to="/wishlist" className="wishlist-icon" aria-label="Wishlist">
           <i className="bi bi-heart"></i>
-        </button>
+        </NavLink>
 
-        <button className="cart-icon" aria-label="Cart">
+        <NavLink to="/cart" className="cart-icon" aria-label="Cart">
           <i className="bi bi-cart3"></i>
-          <span>3</span>
-        </button>
+        </NavLink>
 
-        <button aria-label="Account">
+        <NavLink to="/login" className="account-icon" aria-label="Account">
           <i className="bi bi-person"></i>
-        </button>
+        </NavLink>
 
       </div>
 

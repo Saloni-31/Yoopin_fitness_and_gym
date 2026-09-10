@@ -1,8 +1,8 @@
 import Hero from "../components/Hero";
-import Services from "../components/Services";
 import Welcome from "../components/Welcome";
-import News from "../components/News";
 import Products from "../components/Products";
+import News from "../components/News";
+import Services from "../components/Services";
 import Video from "../components/Video";
 import Footer from "../components/Footer";
 
@@ -11,9 +11,8 @@ function Home() {
     <>
       <Hero />
       <Services />
-      <Welcome />
-      <News />
       <Products />
+      <News />
       <Video />
       <Footer />
     </>

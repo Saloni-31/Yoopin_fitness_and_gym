@@ -1,0 +1,259 @@
+.tutorials-section {
+  padding: 90px 0;
+  background: #eef3f6;
+}
+
+.tutorials-heading {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 40px;
+}
+
+.tutorials-subtitle {
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #6f8794;
+}
+
+.tutorials-section .section-title {
+  margin-bottom: 18px;
+  font-size: 38px;
+  line-height: 1.2;
+  color: #263942;
+}
+
+.tutorials-section .section-title strong {
+  font-weight: 800;
+}
+
+.tutorials-description {
+  max-width: 620px;
+  margin: 20px auto 0;
+  color: #71818a;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* ================================
+   DIVIDER
+================================ */
+
+.tutorials-section .divider {
+  width: 55px;
+  height: 3px;
+  margin: 0 auto;
+  background: #263942;
+}
+
+
+/* ================================
+   CATEGORY BUTTONS
+================================ */
+
+.tutorial-categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 45px;
+}
+
+.category-btn {
+  border: 1px solid #d2dde2;
+  background: #ffffff;
+  color: #526873;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.category-btn:hover {
+  background: #263942;
+  color: #ffffff;
+  border-color: #263942;
+}
+
+.category-btn.active {
+  background: #263942;
+  color: #ffffff;
+  border-color: #263942;
+}
+
+
+/* ================================
+   VIDEO GRID
+================================ */
+
+.tutorial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+
+/* ================================
+   VIDEO CARD
+================================ */
+
+.tutorial-card {
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(38, 57, 66, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tutorial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 35px rgba(38, 57, 66, 0.14);
+}
+
+
+/* ================================
+   VIDEO
+================================ */
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #dfe7eb;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+
+/* ================================
+   CARD CONTENT
+================================ */
+
+.tutorial-content {
+  padding: 22px 22px 24px;
+}
+
+.tutorial-category {
+  display: inline-block;
+  margin-bottom: 9px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #78909c;
+}
+
+.tutorial-content h3 {
+  margin: 0 0 9px;
+  color: #263942;
+  font-size: 19px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.tutorial-content p {
+  margin: 0;
+  color: #7b8b93;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 991px) {
+
+  .tutorials-section {
+    padding: 70px 0;
+  }
+
+  .tutorials-section .section-title {
+    font-size: 32px;
+  }
+
+  .tutorial-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 767px) {
+
+  .tutorials-section {
+    padding: 60px 15px;
+  }
+
+  .tutorials-heading {
+    margin-bottom: 30px;
+  }
+
+  .tutorials-section .section-title {
+    font-size: 28px;
+  }
+
+  .tutorials-description {
+    font-size: 14px;
+  }
+
+  .tutorial-categories {
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+
+  .category-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .tutorial-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tutorial-content {
+    padding: 18px 18px 20px;
+  }
+
+  .tutorial-content h3 {
+    font-size: 18px;
+  }
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 400px) {
+
+  .tutorials-section .section-title {
+    font-size: 25px;
+  }
+
+  .tutorial-categories {
+    justify-content: flex-start;
+  }
+
+  .category-btn {
+    padding: 7px 13px;
+    font-size: 12px;
+  }
+}

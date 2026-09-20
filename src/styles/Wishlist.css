@@ -260,3 +260,26 @@
     }
 
 }
+
+.wishlist-btn {
+    width: 55px;
+    height: 52px;
+    border: 1px solid #d7dfe4;
+    background: white;
+    border-radius: 10px;
+    font-size: 27px;
+    cursor: pointer;
+    color: #18232b;
+    transition: 0.3s ease;
+}
+
+.wishlist-btn:hover {
+    background: #f3f6f8;
+    transform: translateY(-2px);
+}
+
+.wishlist-btn.wishlist-active {
+    color: #e63946;
+    border-color: #e63946;
+    background: #fff5f5;
+}

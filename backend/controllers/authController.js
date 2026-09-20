@@ -94,6 +94,9 @@ export const login = (req, res) => {
         }
 
         // Generate JWT token
+        console.log("LOGIN USER:", user.name);
+console.log("JWT SECRET EXISTS:", !!SECRET_KEY);
+console.log("TOKEN EXPIRY: 1h");
         const token = jwt.sign(
             {
                 id: user.id,

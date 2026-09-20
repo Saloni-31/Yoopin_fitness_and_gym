@@ -1,0 +1,502 @@
+/* ========================================
+   YOOPIN ABOUT PAGE
+======================================== */
+
+.about-page {
+  color: #000000;
+  background: #ffffff;
+}
+
+
+/* ========================================
+   COMMON
+======================================== */
+
+.about-label {
+  display: inline-block;
+  margin-bottom: 15px;
+
+  color: #e85d5d;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.about-hero {
+  position: relative;
+
+  min-height: 520px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("../public/images/about-hero.jpg");
+  background-size: cover;
+  background-position: center;
+
+  text-align: center;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(23, 38, 61, 0.48);
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 1;
+
+  max-width: 800px;
+  padding: 40px 20px;
+
+  color: #ffffff;
+}
+
+.about-hero-content .about-label {
+  color: #ffffff;
+}
+
+.about-hero-content h1 {
+  margin: 0 0 20px;
+
+  font-size: 58px;
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.about-hero-content h1 strong {
+  color: #ffffff;
+}
+
+.about-hero-content p {
+  max-width: 620px;
+  margin: auto;
+
+  font-size: 17px;
+  line-height: 1.7;
+
+  color: #f2f5f7;
+}
+
+
+/* ========================================
+   OUR STORY
+======================================== */
+
+.about-story {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 75px;
+
+  align-items: center;
+}
+
+.about-story-image {
+  overflow: hidden;
+
+  height: 500px;
+
+  border-radius: 8px;
+}
+
+.about-story-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.5s ease;
+}
+
+.about-story-image:hover img {
+  transform: scale(1.04);
+}
+
+.about-story-content h2 {
+  margin: 0 0 20px;
+
+  font-size: 42px;
+  line-height: 1.2;
+}
+
+.about-story-content h2 strong {
+  font-weight: 800;
+}
+
+.about-divider {
+  width: 50px;
+  height: 3px;
+
+  margin-bottom: 25px;
+
+  background: #2876e8;
+}
+
+.about-story-content p {
+  margin-bottom: 18px;
+
+  color: #71808c;
+
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+
+/* ========================================
+   WHY YOOPIN
+======================================== */
+
+.why-yoopin {
+  padding: 100px 0;
+
+  background: #eef4f7;
+}
+
+.about-section-heading {
+  max-width: 650px;
+
+  margin: 0 auto 60px;
+
+  text-align: center;
+}
+
+.about-section-heading h2 {
+  margin: 0 0 18px;
+
+  font-size: 42px;
+  line-height: 1.2;
+}
+
+.about-section-heading h2 strong {
+  font-weight: 800;
+}
+
+.about-section-heading p {
+  margin: 0;
+
+  color: #71808c;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   FEATURES
+======================================== */
+
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+.about-feature {
+  padding: 40px 35px;
+
+  background: #ffffff;
+
+  border: 1px solid #d8e2e8;
+
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.about-feature:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 15px 35px rgba(23, 38, 61, 0.09);
+}
+
+.feature-number {
+  margin-bottom: 25px;
+
+  color: #2876e8;
+
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.about-feature h3 {
+  margin: 0 0 15px;
+
+  font-size: 21px;
+}
+
+.about-feature p {
+  margin: 0;
+
+  color: #71808c;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* ========================================
+   FITNESS BANNER
+======================================== */
+
+.fitness-banner {
+  min-height: 500px;
+
+  display: flex;
+  align-items: center;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(23, 38, 61, 0.88),
+      rgba(23, 38, 61, 0.30)
+    ),
+    url("../public/images/about-training.jpg");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.fitness-banner-content {
+  max-width: 580px;
+
+  color: #ffffff;
+}
+
+.fitness-banner-content .about-label {
+  color: #e85d5d;
+}
+
+.fitness-banner-content h2 {
+  margin: 0 0 20px;
+
+  font-size: 50px;
+  line-height: 1.1;
+}
+
+.fitness-banner-content h2 strong {
+  font-weight: 800;
+}
+
+.fitness-banner-content p {
+  margin-bottom: 30px;
+
+  color: #e9eef2;
+
+  font-size: 16px;
+}
+
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.about-btn {
+  display: inline-block;
+
+  padding: 14px 25px;
+
+  background: #2876e8;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+
+  transition: background 0.25s ease,
+              transform 0.25s ease;
+}
+
+.about-btn:hover {
+  background: #17263d;
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* ========================================
+   FINAL CTA
+======================================== */
+
+.about-cta {
+  padding: 100px 20px;
+
+  text-align: center;
+
+  background: #ffffff;
+}
+
+.about-cta h2 {
+  margin: 0 0 18px;
+
+  font-size: 48px;
+  line-height: 1.1;
+}
+
+.about-cta h2 strong {
+  font-weight: 800;
+}
+
+.about-cta p {
+  margin: 0 auto 30px;
+
+  color: #71808c;
+
+  font-size: 15px;
+}
+
+.about-cta-btn {
+  display: inline-block;
+
+  padding: 15px 28px;
+
+  background: #17263d;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+
+  transition: all 0.25s ease;
+}
+
+.about-cta-btn:hover {
+  background: #2876e8;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 991px) {
+
+  .about-hero {
+    min-height: 450px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 46px;
+  }
+
+  .about-story {
+    padding: 75px 25px;
+  }
+
+  .about-story-grid {
+    gap: 45px;
+  }
+
+  .about-story-content h2,
+  .about-section-heading h2 {
+    font-size: 35px;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  .why-yoopin {
+    padding: 75px 25px;
+  }
+
+  .fitness-banner {
+    min-height: 450px;
+    padding: 60px 25px;
+  }
+
+  .fitness-banner-content h2 {
+    font-size: 42px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 767px) {
+
+  .about-hero {
+    min-height: 420px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 36px;
+  }
+
+  .about-hero-content p {
+    font-size: 14px;
+  }
+
+  .about-story {
+    padding: 60px 20px;
+  }
+
+  .about-story-grid {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .about-story-image {
+    height: 350px;
+  }
+
+  .about-story-content h2,
+  .about-section-heading h2 {
+    font-size: 30px;
+  }
+
+  .about-feature {
+    padding: 30px 25px;
+  }
+
+  .why-yoopin {
+    padding: 60px 20px;
+  }
+
+  .about-section-heading {
+    margin-bottom: 40px;
+  }
+
+  .fitness-banner {
+    min-height: 450px;
+    padding: 50px 20px;
+  }
+
+  .fitness-banner-content h2 {
+    font-size: 36px;
+  }
+
+  .about-cta {
+    padding: 70px 20px;
+  }
+
+  .about-cta h2 {
+    font-size: 36px;
+  }
+}

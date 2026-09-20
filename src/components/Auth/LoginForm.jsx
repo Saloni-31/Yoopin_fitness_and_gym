@@ -1,36 +1,81 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
+import { useAuth } from "../../Context/AuthContext";
 
 function LoginForm() {
+  const navigate = useNavigate();
+  const { login } = useAuth();
+
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setErrors({});
+
+    if (!email || !password) {
+      setErrors({
+        general: "Email and password are required."
+      });
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/api/auth/login",
+        {
+          email,
+          password
+        }
+      );
+
+      console.log("Login response:", response.data);
+
+      login(response.data);
+
+      navigate("/");
+    } catch (error) {
+      console.log("Login error:", error);
+
+      setErrors({
+        general:
+          error.response?.data?.message ||
+          "Login failed. Please try again."
+      });
+    }
+  };
 
   return (
     <div className="auth-container">
       <div className="auth-card">
 
         <h2>Welcome Back</h2>
+
         <p className="auth-subtitle">
           Sign in to continue
         </p>
 
-        <form>
+        <form onSubmit={handleSubmit}>
 
           {/* Email */}
           <div className="mb-3">
+
             <label className="form-label">
               Email Address
             </label>
 
             <input
-			  type="email"
-			  className="form-control"
-			  placeholder="Enter your email"
-			  value={email}
-			  onChange={(e) => setEmail(e.target.value)}
-			/>
+              type="email"
+              className="form-control"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+
           </div>
 
           {/* Password */}
@@ -43,12 +88,12 @@ function LoginForm() {
             <div className="password-box">
 
               <input
-			  type={showPassword ? "text" : "password"}
-			  className="form-control"
-			  placeholder="Enter your password"
-			  value={password}
-			  onChange={(e) => setPassword(e.target.value)}
-			  />
+                type={showPassword ? "text" : "password"}
+                className="form-control"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
 
               <button
                 type="button"
@@ -70,8 +115,14 @@ function LoginForm() {
 
           </div>
 
-          {/* Remember + Forgot */}
+          {/* Error */}
+          {errors.general && (
+            <p className="auth-error">
+              {errors.general}
+            </p>
+          )}
 
+          {/* Remember + Forgot */}
           <div className="auth-options">
 
             <div className="form-check">
@@ -91,11 +142,16 @@ function LoginForm() {
 
             </div>
 
-            <a href="#">Forgot Password?</a>
+            <a href="#">
+              Forgot Password?
+            </a>
 
           </div>
 
-          <button className="btn auth-btn">
+          <button
+            type="submit"
+            className="btn auth-btn"
+          >
             Sign In
           </button>
 

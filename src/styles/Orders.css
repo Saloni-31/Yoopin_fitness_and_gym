@@ -1,0 +1,286 @@
+.orders-page {
+    min-height: 100vh;
+    background: #f3f7fa;
+    padding: 60px 20px;
+}
+
+.orders-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.orders-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.orders-heading h1 {
+    margin: 0;
+    font-size: 42px;
+    font-weight: 800;
+    color: #172b3a;
+    letter-spacing: -1px;
+}
+
+.orders-heading p {
+    margin-top: 10px;
+    color: #71808c;
+    font-size: 16px;
+}
+
+.orders-loading {
+    text-align: center;
+    padding: 100px 20px;
+    font-size: 17px;
+    color: #667784;
+}
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.order-card {
+    background: #ffffff;
+    border: 1px solid #e4edf2;
+    border-radius: 18px;
+    padding: 26px;
+    box-shadow: 0 8px 25px rgba(30, 60, 80, 0.07);
+    transition: all 0.25s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(30, 60, 80, 0.11);
+}
+
+.order-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #edf2f5;
+}
+
+.order-label {
+    margin: 0 0 6px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #91a0aa;
+    letter-spacing: 1.2px;
+}
+
+.order-top h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #1d3444;
+    font-weight: 700;
+}
+
+.order-status {
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+/* Pending */
+.order-status.pending {
+    background: #fff4d6;
+    color: #a36b00;
+}
+
+/* Processing */
+.order-status.processing {
+    background: #e5f2ff;
+    color: #2670aa;
+}
+
+/* Shipped */
+.order-status.shipped {
+    background: #e9e7ff;
+    color: #6256b5;
+}
+
+/* Delivered */
+.order-status.delivered {
+    background: #e4f7ed;
+    color: #218553;
+}
+
+/* Cancelled */
+.order-status.cancelled {
+    background: #fde8e8;
+    color: #c33c3c;
+}
+
+.order-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 24px 0;
+}
+
+.order-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.order-details span {
+    font-size: 13px;
+    color: #8a98a2;
+}
+
+.order-details strong {
+    font-size: 16px;
+    color: #253d4d;
+}
+
+.order-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #edf2f5;
+}
+
+.order-bottom span {
+    font-size: 13px;
+    color: #7b8992;
+}
+
+.order-bottom button {
+    border: none;
+    background: #253f52;
+    color: white;
+    padding: 11px 20px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.order-bottom button:hover {
+    background: #172b3a;
+    transform: translateY(-1px);
+}
+
+
+/* ================================
+   NO ORDERS
+================================ */
+
+.no-orders {
+    background: #ffffff;
+    border: 1px solid #e4edf2;
+    border-radius: 20px;
+    padding: 70px 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(30, 60, 80, 0.06);
+}
+
+.no-orders-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #eaf4f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+
+.no-orders h2 {
+    margin: 0;
+    color: #1d3444;
+    font-size: 26px;
+}
+
+.no-orders p {
+    margin: 10px 0 25px;
+    color: #7b8992;
+    font-size: 15px;
+}
+
+.shop-orders-btn {
+    border: none;
+    background: #253f52;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.shop-orders-btn:hover {
+    background: #172b3a;
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+    .orders-page {
+        padding: 40px 15px;
+    }
+
+    .orders-heading h1 {
+        font-size: 32px;
+    }
+
+    .order-card {
+        padding: 20px;
+    }
+
+    .order-details {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .order-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .order-bottom button {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .orders-heading {
+        margin-bottom: 30px;
+    }
+
+    .orders-heading h1 {
+        font-size: 28px;
+    }
+
+    .order-top {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .order-status {
+        align-self: flex-start;
+    }
+
+    .no-orders {
+        padding: 50px 20px;
+    }
+}

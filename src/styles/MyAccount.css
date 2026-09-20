@@ -1,0 +1,182 @@
+.account-page {
+    min-height: 100vh;
+    background: #edf3f7;
+    padding: 70px 20px;
+}
+
+.account-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+
+.account-header {
+    margin-bottom: 35px;
+}
+
+.account-header h1 {
+    margin: 0 0 8px;
+    font-size: 38px;
+    font-weight: 700;
+    color: #18232b;
+}
+
+.account-header p {
+    margin: 0;
+    color: #71808a;
+    font-size: 16px;
+}
+
+/* ACCOUNT GRID */
+
+.account-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.account-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 28px;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #e2e9ed;
+    box-shadow: 0 8px 25px rgba(24, 35, 43, 0.06);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.account-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(24, 35, 43, 0.10);
+    border-color: #cbd7de;
+}
+
+.account-card > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    background: #edf3f7;
+    font-size: 23px;
+}
+
+.account-card h3 {
+    margin: 0 0 8px;
+    font-size: 19px;
+    color: #18232b;
+}
+
+.account-card p {
+    margin: 0;
+    color: #71808a;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* LOGOUT */
+
+.logout-card:hover {
+    border-color: #e2bcbc;
+    background: #fffafa;
+}
+
+/* ADMIN SECTION */
+
+.admin-section {
+    grid-column: 1 / -1;
+    margin-top: 25px;
+}
+
+.admin-section h2 {
+    margin: 0 0 18px;
+    font-size: 24px;
+    color: #18232b;
+}
+
+.admin-section .account-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.admin-card {
+    background: #f8fafb;
+}
+
+/* LOGIN BOX */
+
+.account-login-box {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 45px 35px;
+    background: #ffffff;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 12px 35px rgba(24, 35, 43, 0.08);
+}
+
+.account-login-box h1 {
+    margin: 0 0 12px;
+    color: #18232b;
+    font-size: 32px;
+}
+
+.account-login-box p {
+    margin: 0 0 25px;
+    color: #71808a;
+}
+
+.account-login-btn {
+    display: inline-block;
+    padding: 13px 35px;
+    background: #18232b;
+    color: #ffffff;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.account-login-btn:hover {
+    background: #3b505e;
+    transform: translateY(-2px);
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+    .account-page {
+        padding: 45px 15px;
+    }
+
+    .account-header h1 {
+        font-size: 30px;
+    }
+
+    .account-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-section {
+        grid-column: auto;
+    }
+
+    .admin-section .account-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .account-card {
+        padding: 23px;
+    }
+}
+
+.account-icon-box i.bi {
+    color: #18232b !important;
+    font-size: 23px !important;
+    display: inline-block !important;
+    opacity: 1 !important;
+}

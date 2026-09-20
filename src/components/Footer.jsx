@@ -1,79 +1,107 @@
-import facebookIcon from "../assets/icons/facebook1.svg";
-import twitterIcon from "../assets/icons/twitter1.svg";
-import dribbbleIcon from "../assets/icons/dribbble.svg";
-import linkedinIcon from "../assets/icons/linkedin.svg";
-import beeIcon from "../assets/icons/bee.svg";
+import { Link } from "react-router-dom";
+import "../styles/Footer.css";
+
 function Footer() {
   return (
-    <>
-      <footer className="footer-main">
-        <div className="container">
-          <div className="footer-grid">
-            <div>
-              <h6>About PSDfreebies.com</h6>
-              <p>
-                Looking cautiously round, to ascertain that they were not overheard,
-                the two hags cowered nearer to the fire, and chuckled heartily.
-              </p>
-              <div className="social-badges">
-                <a href="#" className="badge-fb">
-                  <img src={facebookIcon} alt="Facebook" className="social-icon" /> 136
-                </a>
-                <a href="#" className="badge-tw">
-                  <img src={twitterIcon} alt="Twitter" className="social-icon" /> 68
-                </a>
-                <a href="#" className="badge-dr">
-                  <img src={dribbbleIcon} alt="Dribbble" className="social-icon" /> 16
-                </a>
-                <a href="#" className="badge-li">
-                  <img src={linkedinIcon} alt="LinkedIn" className="social-icon" /> 13
-                </a>
-              </div>
+    <footer className="yoopin-footer">
+
+      {/* Main Footer */}
+      <div className="footer-main">
+
+        <div className="container footer-grid">
+
+          {/* BRAND */}
+          <div className="footer-brand">
+
+            <Link to="/" className="footer-logo">
+              <span className="footer-logo-mark">⌁</span>
+              YOOPIN
+            </Link>
+
+            <p>
+              Premium fitness gear designed to help you
+              train better, move stronger and live healthier.
+            </p>
+
+            <div className="footer-socials">
+              <a href="#" aria-label="Instagram">ig</a>
+              <a href="#" aria-label="Facebook">f</a>
+              <a href="#" aria-label="YouTube">▶</a>
             </div>
 
-            <div>
-              <h6>About Us</h6>
-              <ul className="footer-links">
-                <li><a href="#">Company</a></li>
-                <li><a href="#">Our Team</a></li>
-                <li><a href="#">Testimonials</a></li>
-                <li><a href="#">Contacts</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h6>Services</h6>
-              <ul className="footer-links">
-                <li><a href="#">Branding</a></li>
-                <li><a href="#">UX Design</a></li>
-                <li><a href="#">Prototype</a></li>
-                <li><a href="#">UI Design</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h6>Contact</h6>
-              <div className="contact-info">
-                <p>(415) 496-9612</p>
-                <p>920 Reserve</p>
-                <p>Roseville, CA 95678</p>
-              </div>
-            </div>
           </div>
-        </div>
-      </footer>
 
-      <div className="footer-bottom">
-        <div className="container">
-          <div className="footer-bottom-inner">
-            <div>&copy; 2016 PSDfreebies.com &mdash; All Right Reserved</div>
-            <div className="brand">
-              Design by: <img src={beeIcon} alt="Bee logo" className="bee-icon" /> PSDFreebies.com
-            </div>
+
+          {/* QUICK LINKS */}
+          <div className="footer-column">
+
+            <h3>QUICK LINKS</h3>
+
+            <Link to="/products">Shop</Link>
+            <Link to="/categories">Categories</Link>
+            <Link to="/tutorials">Tutorials</Link>
+            <Link to="/about">About Us</Link>
+
           </div>
+
+
+          {/* CUSTOMER SUPPORT */}
+          <div className="footer-column">
+
+            <h3>SUPPORT</h3>
+
+            <Link to="/contact">Contact Us</Link>
+            <Link to="/cart">My Cart</Link>
+            <a href="#">Shipping & Delivery</a>
+            <a href="#">Returns & Refunds</a>
+
+          </div>
+
+
+          {/* CONTACT */}
+          <div className="footer-contact">
+
+            <h3>GET IN TOUCH</h3>
+
+            <a href="mailto:hello@yoopin.com">
+              hello@yoopin.com
+            </a>
+
+            <a href="tel:+919999999999">
+              +91 99999 99999
+            </a>
+
+            <p>
+              Indore, Madhya Pradesh
+              <br />
+              India
+            </p>
+
+          </div>
+
         </div>
+
       </div>
-    </>
+
+
+      {/* Bottom Footer */}
+      <div className="footer-bottom">
+
+        <div className="container footer-bottom-inner">
+
+          <p>
+            © 2026 YOOPIN. All Rights Reserved.
+          </p>
+
+          <p>
+            <span>TRAIN HARD.</span> LIVE STRONG.
+          </p>
+
+        </div>
+
+      </div>
+
+    </footer>
   );
 }
 

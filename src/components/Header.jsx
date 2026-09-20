@@ -1,16 +1,19 @@
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../Context/AuthContext";
 import mountain from "../assets/icons/mountain.svg";
 import "../styles/Header.css";
 
 function Header() {
+  const { isLoggedIn } = useAuth();
+
   return (
     <header className="main-header">
 
       {/* Logo */}
-        <div className="logo">
-		  <img src={mountain} alt="Yoopin logo" />
-		  <div className="logo-text">YOOPIN</div>
-		</div>
+      <div className="logo">
+        <img src={mountain} alt="Yoopin logo" />
+        <div className="logo-text">YOOPIN</div>
+      </div>
 
       {/* Navigation */}
       <nav className="main-nav">
@@ -28,15 +31,27 @@ function Header() {
           <i className="bi bi-search"></i>
         </button>
 
-        <NavLink to="/wishlist" className="wishlist-icon" aria-label="Wishlist">
+        <NavLink
+          to="/wishlist"
+          className="wishlist-icon"
+          aria-label="Wishlist"
+        >
           <i className="bi bi-heart"></i>
         </NavLink>
 
-        <NavLink to="/cart" className="cart-icon" aria-label="Cart">
+        <NavLink
+          to="/cart"
+          className="cart-icon"
+          aria-label="Cart"
+        >
           <i className="bi bi-cart3"></i>
         </NavLink>
 
-        <NavLink to="/login" className="account-icon" aria-label="Account">
+        <NavLink
+          to={isLoggedIn ? "/myaccount" : "/login"}
+          className="account-icon"
+          aria-label="Account"
+        >
           <i className="bi bi-person"></i>
         </NavLink>
 
